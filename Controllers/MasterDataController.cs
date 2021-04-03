@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using api.Dtos;
+using api.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -13,22 +14,16 @@ namespace api.Controllers
     [Route("api")]
     public class MasterDataController : ControllerBase
     {
+
+        private readonly IBenefitRepository _benefits;
+
+        public MasterDataController(IBenefitRepository benefits) {
+            _benefits = benefits;
+        }
+
         [HttpGet]
         [Route("benefits")]
-        public IEnumerable<BenefitDto> GetBenefits() => new List<BenefitDto> {
-            new BenefitDto() {
-                Id = 1,
-                Benefit = "Bolsa Família"
-            },
-            new BenefitDto() {
-                Id = 2,
-                Benefit = "Bolsa Moradia"
-            },
-            new BenefitDto() {
-                Id = 3,
-                Benefit = "BPC"
-            }
-        };
+        public IEnumerable<BenefitDto> GetBenefits() => _benefits.Get();
 
         [HttpGet]
         [Route("externalservices")]
