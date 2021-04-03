@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/03/2021 12:48:04 PM"
+    "x-generation-date": "04/03/2021 2:19:12 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3317,7 +3317,7 @@
           "id": {
             "type": "string"
           },
-          "Benefit": {
+          "benefit": {
             "type": "string"
           },
           "published_at": {
@@ -3328,7 +3328,7 @@
       },
       "NewBenefit": {
         "properties": {
-          "Benefit": {
+          "benefit": {
             "type": "string"
           },
           "published_at": {

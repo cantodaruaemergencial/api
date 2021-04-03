@@ -522,7 +522,7 @@
           "id": {
             "type": "string"
           },
-          "Benefit": {
+          "benefit": {
             "type": "string"
           },
           "published_at": {
@@ -533,7 +533,7 @@
       },
       "NewBenefit": {
         "properties": {
-          "Benefit": {
+          "benefit": {
             "type": "string"
           },
           "published_at": {
