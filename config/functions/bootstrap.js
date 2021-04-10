@@ -12,7 +12,7 @@
 
 const _ = require("lodash");
 
-const allowGetRoutes = async (controller) => {
+const allowRoute = async (controller, method) => {
   const service = await strapi.plugins["users-permissions"].services.userspermissions;
   const plugins = await service.getPlugins("en");
   const roles = await service.getRoles();
@@ -32,10 +32,20 @@ const allowGetRoutes = async (controller) => {
   }
 
   const publicRole = await getRole("public");
-  setPermission(publicRole, "application", controller, "count", true);
-  setPermission(publicRole, "application", controller, "find", true);
-  setPermission(publicRole, "application", controller, "findone", true);
+  setPermission(publicRole, "application", controller, method, true);
   await service.updateRole(publicRole.id, publicRole);
+}
+
+const allowGetRoutes = async (controller) => {
+  await allowRoute(controller, "count");
+  await allowRoute(controller, "find");
+  await allowRoute(controller, "findone");
+}
+
+const allowPostRoutes = async (controller) => {
+  await allowRoute(controller, 'create');
+  await allowRoute(controller, 'update');
+  await allowRoute(controller, 'delete');
 }
 
 module.exports = async () => {
@@ -45,6 +55,9 @@ module.exports = async () => {
   allowGetRoutes('gender');
   allowGetRoutes('marital-status');
   allowGetRoutes('school-training');
-
+  
+  allowGetRoutes('person');
+  allowPostRoutes('person');
+  
   return;
 };

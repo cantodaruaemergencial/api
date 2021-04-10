@@ -1,0 +1,98 @@
+{
+  "kind": "collectionType",
+  "collectionName": "people",
+  "info": {
+    "name": "Person"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "SocialName": {
+      "type": "string"
+    },
+    "MotherName": {
+      "type": "string"
+    },
+    "BIrthDate": {
+      "type": "date"
+    },
+    "BIrthPlace": {
+      "type": "string"
+    },
+    "SkinColor": {
+      "type": "string"
+    },
+    "HomelessTime": {
+      "type": "string"
+    },
+    "gender": {
+      "model": "gender"
+    },
+    "GeneralRegister": {
+      "type": "string"
+    },
+    "Childrens": {
+      "type": "integer"
+    },
+    "HasHabitation": {
+      "type": "boolean"
+    },
+    "HasEmergencyAid": {
+      "type": "boolean"
+    },
+    "PbhBasket": {
+      "type": "boolean"
+    },
+    "HasUniqueRegister": {
+      "type": "boolean"
+    },
+    "HasGeneralRegister": {
+      "type": "boolean"
+    },
+    "HasCpf": {
+      "type": "boolean"
+    },
+    "Cpf": {
+      "type": "string"
+    },
+    "HasCtps": {
+      "type": "boolean"
+    },
+    "HasBIrthCertificate": {
+      "type": "boolean"
+    },
+    "marital_status": {
+      "model": "marital-status"
+    },
+    "school_training": {
+      "model": "school-training"
+    },
+    "ReferenceLocation": {
+      "type": "string"
+    },
+    "Occupation": {
+      "type": "string"
+    },
+    "Profession": {
+      "type": "string"
+    },
+    "ContactPhone": {
+      "type": "string"
+    },
+    "ReferenceAddress": {
+      "type": "string"
+    },
+    "Demands": {
+      "type": "string"
+    },
+    "Observation": {
+      "type": "string"
+    }
+  }
+}
