@@ -23,7 +23,7 @@ on:
 env:
   PROJECT_ID: ${{ secrets.PROJECT_ID }}
   RUN_REGION: us-east1
-  SERVICE_NAME: cantodarua-api
+  SERVICE_NAME: api
 
 jobs:
   setup-build-deploy:
@@ -48,11 +48,11 @@ jobs:
       # Build and push image to Google Container Registry
       - name: Build
         run: |
-          gcloud builds submit --tag $RUN_REGION-docker.pkg.dev/$PROJECT_ID/repo/api:$GITHUB_SHA --project $PROJECT_ID
+          gcloud builds submit -t gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA
       # Deploy image to Cloud Run
       - name: Deploy
         run: |
           gcloud run deploy $SERVICE_NAME \
             --region $RUN_REGION \
-            --image $RUN_REGION-docker.pkg.dev/$PROJECT_ID/repo/api:$GITHUB_SHA \
+            --image gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA \
             --platform managed
