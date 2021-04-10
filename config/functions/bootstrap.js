@@ -42,6 +42,7 @@ module.exports = async () => {
 
   allowGetRoutes('benefit');
   allowGetRoutes('external-service');
+  allowGetRoutes('gender');
 
   return;
 };
