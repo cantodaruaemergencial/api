@@ -44,6 +44,7 @@ module.exports = async () => {
   allowGetRoutes('external-service');
   allowGetRoutes('gender');
   allowGetRoutes('marital-status');
+  allowGetRoutes('school-training');
 
   return;
 };
