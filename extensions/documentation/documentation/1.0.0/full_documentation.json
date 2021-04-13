@@ -7618,7 +7618,7 @@
               "HasCtps": {
                 "type": "boolean"
               },
-              "HasBIrthCertificate": {
+              "HasBirthCertificate": {
                 "type": "boolean"
               },
               "marital_status": {
@@ -7892,7 +7892,7 @@
           "HasCtps": {
             "type": "boolean"
           },
-          "HasBIrthCertificate": {
+          "HasBirthCertificate": {
             "type": "boolean"
           },
           "marital_status": {
@@ -8076,7 +8076,7 @@
           "HasCtps": {
             "type": "boolean"
           },
-          "HasBIrthCertificate": {
+          "HasBirthCertificate": {
             "type": "boolean"
           },
           "marital_status": {

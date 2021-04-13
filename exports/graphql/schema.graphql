@@ -626,7 +626,7 @@ type Person {
   HasCpf: Boolean
   Cpf: String
   HasCtps: Boolean
-  HasBIrthCertificate: Boolean
+  HasBirthCertificate: Boolean
   marital_status: MaritalStatus
   school_training: SchoolTraining
   ReferenceLocation: String
@@ -695,7 +695,7 @@ type PersonGroupBy {
   HasCpf: [PersonConnectionHasCpf]
   Cpf: [PersonConnectionCpf]
   HasCtps: [PersonConnectionHasCtps]
-  HasBIrthCertificate: [PersonConnectionHasBIrthCertificate]
+  HasBirthCertificate: [PersonConnectionHasBIrthCertificate]
   marital_status: [PersonConnectionMarital_status]
   school_training: [PersonConnectionSchool_training]
   ReferenceLocation: [PersonConnectionReferenceLocation]
@@ -899,7 +899,7 @@ input PersonInput {
   HasCpf: Boolean
   Cpf: String
   HasCtps: Boolean
-  HasBIrthCertificate: Boolean
+  HasBirthCertificate: Boolean
   marital_status: ID
   school_training: ID
   ReferenceLocation: String
@@ -936,7 +936,7 @@ input editPersonInput {
   HasCpf: Boolean
   Cpf: String
   HasCtps: Boolean
-  HasBIrthCertificate: Boolean
+  HasBirthCertificate: Boolean
   marital_status: ID
   school_training: ID
   ReferenceLocation: String
