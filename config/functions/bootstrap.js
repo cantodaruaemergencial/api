@@ -59,6 +59,12 @@ module.exports = async () => {
   
   allowGetRoutes('person');
   allowPostRoutes('person');
+
+  allowGetRoutes('entrance');
+  allowPostRoutes('entrance');
+
+  allowGetRoutes('attendance');
+  allowPostRoutes('attendance');
   
   return;
 };

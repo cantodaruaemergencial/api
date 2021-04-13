@@ -93,6 +93,10 @@
     },
     "Observation": {
       "type": "string"
+    },
+    "entrances": {
+      "via": "person",
+      "collection": "entrance"
     }
   }
 }
