@@ -714,6 +714,9 @@
               }
             }
           },
+          "CardNumber": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -814,6 +817,9 @@
             }
           },
           "skin_color": {
+            "type": "string"
+          },
+          "CardNumber": {
             "type": "string"
           },
           "published_at": {

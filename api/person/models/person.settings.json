@@ -101,6 +101,9 @@
     },
     "skin_color": {
       "model": "skin-color"
+    },
+    "CardNumber": {
+      "type": "string"
     }
   }
 }
