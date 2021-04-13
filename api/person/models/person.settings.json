@@ -44,7 +44,7 @@
     "HasEmergencyAid": {
       "type": "boolean"
     },
-    "PbhBasket": {
+    "HasPbhBasket": {
       "type": "boolean"
     },
     "HasUniqueRegister": {

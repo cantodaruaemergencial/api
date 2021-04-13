@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/13/2021 8:08:13 PM"
+    "x-generation-date": "04/13/2021 8:10:27 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -7600,7 +7600,7 @@
               "HasEmergencyAid": {
                 "type": "boolean"
               },
-              "PbhBasket": {
+              "HasPbhBasket": {
                 "type": "boolean"
               },
               "HasUniqueRegister": {
@@ -7874,7 +7874,7 @@
           "HasEmergencyAid": {
             "type": "boolean"
           },
-          "PbhBasket": {
+          "HasPbhBasket": {
             "type": "boolean"
           },
           "HasUniqueRegister": {
@@ -8058,7 +8058,7 @@
           "HasEmergencyAid": {
             "type": "boolean"
           },
-          "PbhBasket": {
+          "HasPbhBasket": {
             "type": "boolean"
           },
           "HasUniqueRegister": {
