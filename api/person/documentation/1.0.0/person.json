@@ -538,9 +538,6 @@
           "BirthPlace": {
             "type": "string"
           },
-          "SkinColor": {
-            "type": "string"
-          },
           "HomelessTime": {
             "type": "string"
           },
@@ -717,6 +714,9 @@
           "CardNumber": {
             "type": "string"
           },
+          "Preferential": {
+            "type": "boolean"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -739,9 +739,6 @@
             "format": "date"
           },
           "BirthPlace": {
-            "type": "string"
-          },
-          "SkinColor": {
             "type": "string"
           },
           "HomelessTime": {
@@ -821,6 +818,9 @@
           },
           "CardNumber": {
             "type": "string"
+          },
+          "Preferential": {
+            "type": "boolean"
           },
           "published_at": {
             "type": "string",

@@ -26,9 +26,6 @@
     "BirthPlace": {
       "type": "string"
     },
-    "SkinColor": {
-      "type": "string"
-    },
     "HomelessTime": {
       "type": "string"
     },
@@ -104,6 +101,9 @@
     },
     "CardNumber": {
       "type": "string"
+    },
+    "Preferential": {
+      "type": "boolean"
     }
   }
 }
