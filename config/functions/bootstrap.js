@@ -50,6 +50,7 @@ const allowPostRoutes = async (controller) => {
 
 module.exports = async () => {
 
+  allowGetRoutes('service');
   allowGetRoutes('benefit');
   allowGetRoutes('external-service');
   allowGetRoutes('gender');
@@ -58,6 +59,12 @@ module.exports = async () => {
   
   allowGetRoutes('person');
   allowPostRoutes('person');
+
+  allowGetRoutes('entrance');
+  allowPostRoutes('entrance');
+
+  allowGetRoutes('attendance');
+  allowPostRoutes('attendance');
   
   return;
 };

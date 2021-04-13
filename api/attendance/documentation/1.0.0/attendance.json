@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/people": {
+    "/attendances": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Person"
+                    "$ref": "#/components/schemas/Attendance"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Person"
+          "Attendance"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Person"
+                  "$ref": "#/components/schemas/Attendance"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Person"
+          "Attendance"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPerson"
+                "$ref": "#/components/schemas/NewAttendance"
               }
             }
           }
         }
       }
     },
-    "/people/count": {
+    "/attendances/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Person"
+          "Attendance"
         ],
         "parameters": []
       }
     },
-    "/people/{id}": {
+    "/attendances/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Person"
+                  "$ref": "#/components/schemas/Attendance"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Person"
+          "Attendance"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Person"
+                  "$ref": "#/components/schemas/Attendance"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Person"
+          "Attendance"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPerson"
+                "$ref": "#/components/schemas/NewAttendance"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Person"
+          "Attendance"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Person": {
+      "Attendance": {
         "required": [
           "id"
         ],
@@ -522,26 +522,7 @@
           "id": {
             "type": "string"
           },
-          "Name": {
-            "type": "string"
-          },
-          "SocialName": {
-            "type": "string"
-          },
-          "MotherName": {
-            "type": "string"
-          },
-          "BirthDate": {
-            "type": "string",
-            "format": "date"
-          },
-          "BirthPlace": {
-            "type": "string"
-          },
-          "HomelessTime": {
-            "type": "string"
-          },
-          "gender": {
+          "entrance": {
             "required": [
               "id"
             ],
@@ -549,7 +530,10 @@
               "id": {
                 "type": "string"
               },
-              "Gender": {
+              "person": {
+                "type": "string"
+              },
+              "Date": {
                 "type": "string"
               },
               "published_at": {
@@ -563,40 +547,7 @@
               }
             }
           },
-          "GeneralRegister": {
-            "type": "string"
-          },
-          "Childrens": {
-            "type": "integer"
-          },
-          "HasHabitation": {
-            "type": "boolean"
-          },
-          "HasEmergencyAid": {
-            "type": "boolean"
-          },
-          "HasPbhBasket": {
-            "type": "boolean"
-          },
-          "HasUniqueRegister": {
-            "type": "boolean"
-          },
-          "HasGeneralRegister": {
-            "type": "boolean"
-          },
-          "HasCpf": {
-            "type": "boolean"
-          },
-          "Cpf": {
-            "type": "string"
-          },
-          "HasCtps": {
-            "type": "boolean"
-          },
-          "HasBirthCertificate": {
-            "type": "boolean"
-          },
-          "marital_status": {
+          "service": {
             "required": [
               "id"
             ],
@@ -604,7 +555,7 @@
               "id": {
                 "type": "string"
               },
-              "MaritalStatus": {
+              "Service": {
                 "type": "string"
               },
               "published_at": {
@@ -617,105 +568,6 @@
                 "type": "string"
               }
             }
-          },
-          "school_training": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "SchoolTraining": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "ReferenceLocation": {
-            "type": "string"
-          },
-          "Occupation": {
-            "type": "string"
-          },
-          "Profession": {
-            "type": "string"
-          },
-          "ContactPhone": {
-            "type": "string"
-          },
-          "ReferenceAddress": {
-            "type": "string"
-          },
-          "Demands": {
-            "type": "string"
-          },
-          "Observation": {
-            "type": "string"
-          },
-          "entrances": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "person": {
-                  "type": "string"
-                },
-                "Date": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "skin_color": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "SkinColor": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "CardNumber": {
-            "type": "string"
-          },
-          "Preferential": {
-            "type": "boolean"
           },
           "published_at": {
             "type": "string",
@@ -723,104 +575,13 @@
           }
         }
       },
-      "NewPerson": {
+      "NewAttendance": {
         "properties": {
-          "Name": {
+          "entrance": {
             "type": "string"
           },
-          "SocialName": {
+          "service": {
             "type": "string"
-          },
-          "MotherName": {
-            "type": "string"
-          },
-          "BirthDate": {
-            "type": "string",
-            "format": "date"
-          },
-          "BirthPlace": {
-            "type": "string"
-          },
-          "HomelessTime": {
-            "type": "string"
-          },
-          "gender": {
-            "type": "string"
-          },
-          "GeneralRegister": {
-            "type": "string"
-          },
-          "Childrens": {
-            "type": "integer"
-          },
-          "HasHabitation": {
-            "type": "boolean"
-          },
-          "HasEmergencyAid": {
-            "type": "boolean"
-          },
-          "HasPbhBasket": {
-            "type": "boolean"
-          },
-          "HasUniqueRegister": {
-            "type": "boolean"
-          },
-          "HasGeneralRegister": {
-            "type": "boolean"
-          },
-          "HasCpf": {
-            "type": "boolean"
-          },
-          "Cpf": {
-            "type": "string"
-          },
-          "HasCtps": {
-            "type": "boolean"
-          },
-          "HasBirthCertificate": {
-            "type": "boolean"
-          },
-          "marital_status": {
-            "type": "string"
-          },
-          "school_training": {
-            "type": "string"
-          },
-          "ReferenceLocation": {
-            "type": "string"
-          },
-          "Occupation": {
-            "type": "string"
-          },
-          "Profession": {
-            "type": "string"
-          },
-          "ContactPhone": {
-            "type": "string"
-          },
-          "ReferenceAddress": {
-            "type": "string"
-          },
-          "Demands": {
-            "type": "string"
-          },
-          "Observation": {
-            "type": "string"
-          },
-          "entrances": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "skin_color": {
-            "type": "string"
-          },
-          "CardNumber": {
-            "type": "string"
-          },
-          "Preferential": {
-            "type": "boolean"
           },
           "published_at": {
             "type": "string",
@@ -838,7 +599,7 @@
   },
   "tags": [
     {
-      "name": "Person"
+      "name": "Attendance"
     }
   ]
 }

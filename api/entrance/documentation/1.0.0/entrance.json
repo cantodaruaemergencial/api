@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/people": {
+    "/entrances": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Person"
+                    "$ref": "#/components/schemas/Entrance"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Person"
+          "Entrance"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Person"
+                  "$ref": "#/components/schemas/Entrance"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Person"
+          "Entrance"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPerson"
+                "$ref": "#/components/schemas/NewEntrance"
               }
             }
           }
         }
       }
     },
-    "/people/count": {
+    "/entrances/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Person"
+          "Entrance"
         ],
         "parameters": []
       }
     },
-    "/people/{id}": {
+    "/entrances/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Person"
+                  "$ref": "#/components/schemas/Entrance"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Person"
+          "Entrance"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Person"
+                  "$ref": "#/components/schemas/Entrance"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Person"
+          "Entrance"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPerson"
+                "$ref": "#/components/schemas/NewEntrance"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Person"
+          "Entrance"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Person": {
+      "Entrance": {
         "required": [
           "id"
         ],
@@ -522,26 +522,7 @@
           "id": {
             "type": "string"
           },
-          "Name": {
-            "type": "string"
-          },
-          "SocialName": {
-            "type": "string"
-          },
-          "MotherName": {
-            "type": "string"
-          },
-          "BirthDate": {
-            "type": "string",
-            "format": "date"
-          },
-          "BirthPlace": {
-            "type": "string"
-          },
-          "HomelessTime": {
-            "type": "string"
-          },
-          "gender": {
+          "person": {
             "required": [
               "id"
             ],
@@ -549,156 +530,101 @@
               "id": {
                 "type": "string"
               },
-              "Gender": {
+              "Name": {
                 "type": "string"
               },
-              "published_at": {
+              "SocialName": {
                 "type": "string"
               },
-              "created_by": {
+              "MotherName": {
                 "type": "string"
               },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "GeneralRegister": {
-            "type": "string"
-          },
-          "Childrens": {
-            "type": "integer"
-          },
-          "HasHabitation": {
-            "type": "boolean"
-          },
-          "HasEmergencyAid": {
-            "type": "boolean"
-          },
-          "HasPbhBasket": {
-            "type": "boolean"
-          },
-          "HasUniqueRegister": {
-            "type": "boolean"
-          },
-          "HasGeneralRegister": {
-            "type": "boolean"
-          },
-          "HasCpf": {
-            "type": "boolean"
-          },
-          "Cpf": {
-            "type": "string"
-          },
-          "HasCtps": {
-            "type": "boolean"
-          },
-          "HasBirthCertificate": {
-            "type": "boolean"
-          },
-          "marital_status": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
+              "BirthDate": {
                 "type": "string"
               },
-              "MaritalStatus": {
+              "BirthPlace": {
                 "type": "string"
               },
-              "published_at": {
+              "HomelessTime": {
                 "type": "string"
               },
-              "created_by": {
+              "gender": {
                 "type": "string"
               },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "school_training": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
+              "GeneralRegister": {
                 "type": "string"
               },
-              "SchoolTraining": {
+              "Childrens": {
+                "type": "integer"
+              },
+              "HasHabitation": {
+                "type": "boolean"
+              },
+              "HasEmergencyAid": {
+                "type": "boolean"
+              },
+              "HasPbhBasket": {
+                "type": "boolean"
+              },
+              "HasUniqueRegister": {
+                "type": "boolean"
+              },
+              "HasGeneralRegister": {
+                "type": "boolean"
+              },
+              "HasCpf": {
+                "type": "boolean"
+              },
+              "Cpf": {
                 "type": "string"
               },
-              "published_at": {
+              "HasCtps": {
+                "type": "boolean"
+              },
+              "HasBirthCertificate": {
+                "type": "boolean"
+              },
+              "marital_status": {
                 "type": "string"
               },
-              "created_by": {
+              "school_training": {
                 "type": "string"
               },
-              "updated_by": {
+              "ReferenceLocation": {
                 "type": "string"
-              }
-            }
-          },
-          "ReferenceLocation": {
-            "type": "string"
-          },
-          "Occupation": {
-            "type": "string"
-          },
-          "Profession": {
-            "type": "string"
-          },
-          "ContactPhone": {
-            "type": "string"
-          },
-          "ReferenceAddress": {
-            "type": "string"
-          },
-          "Demands": {
-            "type": "string"
-          },
-          "Observation": {
-            "type": "string"
-          },
-          "entrances": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "person": {
-                  "type": "string"
-                },
-                "Date": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+              },
+              "Occupation": {
+                "type": "string"
+              },
+              "Profession": {
+                "type": "string"
+              },
+              "ContactPhone": {
+                "type": "string"
+              },
+              "ReferenceAddress": {
+                "type": "string"
+              },
+              "Demands": {
+                "type": "string"
+              },
+              "Observation": {
+                "type": "string"
+              },
+              "entrances": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
-              }
-            }
-          },
-          "skin_color": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
+              },
+              "skin_color": {
                 "type": "string"
               },
-              "SkinColor": {
+              "CardNumber": {
                 "type": "string"
+              },
+              "Preferential": {
+                "type": "boolean"
               },
               "published_at": {
                 "type": "string"
@@ -711,11 +637,9 @@
               }
             }
           },
-          "CardNumber": {
-            "type": "string"
-          },
-          "Preferential": {
-            "type": "boolean"
+          "Date": {
+            "type": "string",
+            "format": "date"
           },
           "published_at": {
             "type": "string",
@@ -723,104 +647,14 @@
           }
         }
       },
-      "NewPerson": {
+      "NewEntrance": {
         "properties": {
-          "Name": {
+          "person": {
             "type": "string"
           },
-          "SocialName": {
-            "type": "string"
-          },
-          "MotherName": {
-            "type": "string"
-          },
-          "BirthDate": {
+          "Date": {
             "type": "string",
             "format": "date"
-          },
-          "BirthPlace": {
-            "type": "string"
-          },
-          "HomelessTime": {
-            "type": "string"
-          },
-          "gender": {
-            "type": "string"
-          },
-          "GeneralRegister": {
-            "type": "string"
-          },
-          "Childrens": {
-            "type": "integer"
-          },
-          "HasHabitation": {
-            "type": "boolean"
-          },
-          "HasEmergencyAid": {
-            "type": "boolean"
-          },
-          "HasPbhBasket": {
-            "type": "boolean"
-          },
-          "HasUniqueRegister": {
-            "type": "boolean"
-          },
-          "HasGeneralRegister": {
-            "type": "boolean"
-          },
-          "HasCpf": {
-            "type": "boolean"
-          },
-          "Cpf": {
-            "type": "string"
-          },
-          "HasCtps": {
-            "type": "boolean"
-          },
-          "HasBirthCertificate": {
-            "type": "boolean"
-          },
-          "marital_status": {
-            "type": "string"
-          },
-          "school_training": {
-            "type": "string"
-          },
-          "ReferenceLocation": {
-            "type": "string"
-          },
-          "Occupation": {
-            "type": "string"
-          },
-          "Profession": {
-            "type": "string"
-          },
-          "ContactPhone": {
-            "type": "string"
-          },
-          "ReferenceAddress": {
-            "type": "string"
-          },
-          "Demands": {
-            "type": "string"
-          },
-          "Observation": {
-            "type": "string"
-          },
-          "entrances": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "skin_color": {
-            "type": "string"
-          },
-          "CardNumber": {
-            "type": "string"
-          },
-          "Preferential": {
-            "type": "boolean"
           },
           "published_at": {
             "type": "string",
@@ -838,7 +672,7 @@
   },
   "tags": [
     {
-      "name": "Person"
+      "name": "Entrance"
     }
   ]
 }
