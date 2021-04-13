@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/13/2021 12:19:21 PM"
+    "x-generation-date": "04/13/2021 2:55:02 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -7576,10 +7576,10 @@
               "MotherName": {
                 "type": "string"
               },
-              "BIrthDate": {
+              "BirthDate": {
                 "type": "string"
               },
-              "BIrthPlace": {
+              "BirthPlace": {
                 "type": "string"
               },
               "SkinColor": {
@@ -7656,6 +7656,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "skin_color": {
+                "type": "string"
               },
               "published_at": {
                 "type": "string"
@@ -7824,11 +7827,11 @@
           "MotherName": {
             "type": "string"
           },
-          "BIrthDate": {
+          "BirthDate": {
             "type": "string",
             "format": "date"
           },
-          "BIrthPlace": {
+          "BirthPlace": {
             "type": "string"
           },
           "SkinColor": {
@@ -7985,6 +7988,28 @@
               }
             }
           },
+          "skin_color": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "SkinColor": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -8002,11 +8027,11 @@
           "MotherName": {
             "type": "string"
           },
-          "BIrthDate": {
+          "BirthDate": {
             "type": "string",
             "format": "date"
           },
-          "BIrthPlace": {
+          "BirthPlace": {
             "type": "string"
           },
           "SkinColor": {
@@ -8083,6 +8108,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "skin_color": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",

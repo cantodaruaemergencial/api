@@ -539,10 +539,10 @@
               "MotherName": {
                 "type": "string"
               },
-              "BIrthDate": {
+              "BirthDate": {
                 "type": "string"
               },
-              "BIrthPlace": {
+              "BirthPlace": {
                 "type": "string"
               },
               "SkinColor": {
@@ -619,6 +619,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "skin_color": {
+                "type": "string"
               },
               "published_at": {
                 "type": "string"

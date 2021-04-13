@@ -531,11 +531,11 @@
           "MotherName": {
             "type": "string"
           },
-          "BIrthDate": {
+          "BirthDate": {
             "type": "string",
             "format": "date"
           },
-          "BIrthPlace": {
+          "BirthPlace": {
             "type": "string"
           },
           "SkinColor": {
@@ -692,6 +692,28 @@
               }
             }
           },
+          "skin_color": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "SkinColor": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -709,11 +731,11 @@
           "MotherName": {
             "type": "string"
           },
-          "BIrthDate": {
+          "BirthDate": {
             "type": "string",
             "format": "date"
           },
-          "BIrthPlace": {
+          "BirthPlace": {
             "type": "string"
           },
           "SkinColor": {
@@ -790,6 +812,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "skin_color": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",

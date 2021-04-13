@@ -11,8 +11,8 @@
   },
   "attributes": {
     "person": {
-      "model": "person",
-      "via": "entrances"
+      "via": "entrances",
+      "model": "person"
     },
     "Date": {
       "type": "date"
