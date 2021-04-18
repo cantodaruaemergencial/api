@@ -80,6 +80,7 @@ const configureGoogleOAuth = async () => {
 
 module.exports = async () => {
 
+  allowGetRoutes('service');
   allowGetRoutes('benefit');
   allowGetRoutes('external-service');
   allowGetRoutes('gender');
@@ -90,6 +91,12 @@ module.exports = async () => {
   allowPostRoutes('person');
 
   configureGoogleOAuth();
+
+  allowGetRoutes('entrance');
+  allowPostRoutes('entrance');
+
+  allowGetRoutes('attendance');
+  allowPostRoutes('attendance');
 
   return;
 };

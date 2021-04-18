@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "people",
   "info": {
-    "name": "Person"
+    "name": "Person",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -19,13 +20,10 @@
     "MotherName": {
       "type": "string"
     },
-    "BIrthDate": {
+    "BirthDate": {
       "type": "date"
     },
-    "BIrthPlace": {
-      "type": "string"
-    },
-    "SkinColor": {
+    "BirthPlace": {
       "type": "string"
     },
     "HomelessTime": {
@@ -46,7 +44,7 @@
     "HasEmergencyAid": {
       "type": "boolean"
     },
-    "PbhBasket": {
+    "HasPbhBasket": {
       "type": "boolean"
     },
     "HasUniqueRegister": {
@@ -64,7 +62,7 @@
     "HasCtps": {
       "type": "boolean"
     },
-    "HasBIrthCertificate": {
+    "HasBirthCertificate": {
       "type": "boolean"
     },
     "marital_status": {
@@ -93,6 +91,19 @@
     },
     "Observation": {
       "type": "string"
+    },
+    "entrances": {
+      "collection": "entrance",
+      "via": "person"
+    },
+    "skin_color": {
+      "model": "skin-color"
+    },
+    "CardNumber": {
+      "type": "string"
+    },
+    "Preferential": {
+      "type": "boolean"
     }
   }
 }
