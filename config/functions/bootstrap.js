@@ -57,7 +57,7 @@ const configureGoogleOAuth = async () => {
       icon: "google",
       key: process.env.GOOGLE_CLIENT_ID,
       secret: process.env.GOOGLE_CLIENT_SECRET,
-      callback: `${strapi.config.server.url}/auth/google/callback`,
+      callback: `${process.env.APP_URL}/connect/google/redirect`,
       scope: ["email"],
     },
   };
