@@ -48,6 +48,36 @@ const allowPostRoutes = async (controller) => {
   await allowRoute(controller, 'delete');
 }
 
+const configureGoogleOAuth = async () => {
+  const newGrantConfig = {
+    google: {
+      enabled: true,
+      icon: 'google',
+      key: process.env.GOOGLE_CLIENT_ID,
+      secret: process.env.GOOGLE_CLIENT_SECRET,
+      callback: `${strapi.config.server.url}/auth/google/callback`,
+      scope: ['email'],
+    },
+  };
+
+  const pluginStore = strapi.store({
+    environment: '',
+    type: 'plugin',
+    name: 'users-permissions',
+  });
+
+  const grantConfig = (await pluginStore.get({ key: 'grant' })) || {};
+
+  _.keys(newGrantConfig).forEach(key => {
+    if (key in newGrantConfig) {
+      grantConfig[key] = _.merge(grantConfig[key], newGrantConfig[key]);
+    }
+  });
+  
+  await pluginStore.set({ key: 'grant', value: grantConfig });
+
+}
+
 module.exports = async () => {
 
   allowGetRoutes('service');
@@ -56,15 +86,17 @@ module.exports = async () => {
   allowGetRoutes('gender');
   allowGetRoutes('marital-status');
   allowGetRoutes('school-training');
-  
+
   allowGetRoutes('person');
   allowPostRoutes('person');
+
+  configureGoogleOAuth();
 
   allowGetRoutes('entrance');
   allowPostRoutes('entrance');
 
   allowGetRoutes('attendance');
   allowPostRoutes('attendance');
-  
+
   return;
 };
