@@ -12,18 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Deploy Master
+name: Deploy MVP
 
 on:
   push:
     branches:
-      - master
+      - mvp
 
 # Environment variables available to all jobs and steps in this workflow
 env:
   PROJECT_ID: ${{ secrets.PROJECT_ID }}
   RUN_REGION: us-east1
-  SERVICE_NAME: api
+  SERVICE_NAME: api-mvp
 
 jobs:
   setup-build-deploy:
