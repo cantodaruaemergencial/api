@@ -5,3 +5,4 @@
 + https://api-7dg574osfa-ue.a.run.app/admin
 + https://api-dev-7dg574osfa-ue.a.run.app/admin
 + https://api-mvp-7dg574osfa-ue.a.run.app/admin
+  
