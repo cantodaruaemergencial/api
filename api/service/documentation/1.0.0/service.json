@@ -607,9 +607,6 @@
                 "ReferenceAddress": {
                   "type": "string"
                 },
-                "Demands": {
-                  "type": "string"
-                },
                 "Observation": {
                   "type": "string"
                 },

@@ -652,9 +652,6 @@
           "ReferenceAddress": {
             "type": "string"
           },
-          "Demands": {
-            "type": "string"
-          },
           "Observation": {
             "type": "string"
           },
@@ -800,9 +797,6 @@
             "type": "string"
           },
           "ReferenceAddress": {
-            "type": "string"
-          },
-          "Demands": {
             "type": "string"
           },
           "Observation": {
