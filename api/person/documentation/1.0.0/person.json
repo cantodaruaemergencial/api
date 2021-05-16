@@ -661,34 +661,6 @@
           "Observation": {
             "type": "string"
           },
-          "entrances": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "person": {
-                  "type": "string"
-                },
-                "Date": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "skin_color": {
             "required": [
               "id"
@@ -806,12 +778,6 @@
           },
           "Observation": {
             "type": "string"
-          },
-          "entrances": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "skin_color": {
             "type": "string"
