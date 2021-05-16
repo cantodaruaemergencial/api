@@ -538,9 +538,6 @@
           "BirthPlace": {
             "type": "string"
           },
-          "HomelessTime": {
-            "type": "string"
-          },
           "gender": {
             "required": [
               "id"
@@ -689,6 +686,10 @@
           "Preferential": {
             "type": "boolean"
           },
+          "HomelessSince": {
+            "type": "string",
+            "format": "date"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -711,9 +712,6 @@
             "format": "date"
           },
           "BirthPlace": {
-            "type": "string"
-          },
-          "HomelessTime": {
             "type": "string"
           },
           "gender": {
@@ -787,6 +785,10 @@
           },
           "Preferential": {
             "type": "boolean"
+          },
+          "HomelessSince": {
+            "type": "string",
+            "format": "date"
           },
           "published_at": {
             "type": "string",

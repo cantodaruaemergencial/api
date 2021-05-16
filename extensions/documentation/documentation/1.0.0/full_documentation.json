@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/16/2021 12:01:08 PM"
+    "x-generation-date": "05/16/2021 12:03:38 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -7636,9 +7636,6 @@
               "BirthPlace": {
                 "type": "string"
               },
-              "HomelessTime": {
-                "type": "string"
-              },
               "gender": {
                 "type": "string"
               },
@@ -7711,6 +7708,9 @@
               "Preferential": {
                 "type": "boolean"
               },
+              "HomelessSince": {
+                "type": "string"
+              },
               "published_at": {
                 "type": "string"
               },
@@ -7778,9 +7778,6 @@
             "format": "date"
           },
           "BirthPlace": {
-            "type": "string"
-          },
-          "HomelessTime": {
             "type": "string"
           },
           "gender": {
@@ -7931,6 +7928,10 @@
           "Preferential": {
             "type": "boolean"
           },
+          "HomelessSince": {
+            "type": "string",
+            "format": "date"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -7953,9 +7954,6 @@
             "format": "date"
           },
           "BirthPlace": {
-            "type": "string"
-          },
-          "HomelessTime": {
             "type": "string"
           },
           "gender": {
@@ -8029,6 +8027,10 @@
           },
           "Preferential": {
             "type": "boolean"
+          },
+          "HomelessSince": {
+            "type": "string",
+            "format": "date"
           },
           "published_at": {
             "type": "string",

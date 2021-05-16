@@ -26,9 +26,6 @@
     "BirthPlace": {
       "type": "string"
     },
-    "HomelessTime": {
-      "type": "string"
-    },
     "gender": {
       "model": "gender"
     },
@@ -100,6 +97,9 @@
     },
     "Preferential": {
       "type": "boolean"
+    },
+    "HomelessSince": {
+      "type": "date"
     }
   }
 }
