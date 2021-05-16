@@ -690,6 +690,34 @@
             "type": "string",
             "format": "date"
           },
+          "services": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "Service": {
+                  "type": "string"
+                },
+                "person": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -789,6 +817,12 @@
           "HomelessSince": {
             "type": "string",
             "format": "date"
+          },
+          "services": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",

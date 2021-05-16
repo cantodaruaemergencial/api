@@ -12,6 +12,10 @@
   "attributes": {
     "Service": {
       "type": "string"
+    },
+    "person": {
+      "via": "services",
+      "model": "person"
     }
   }
 }

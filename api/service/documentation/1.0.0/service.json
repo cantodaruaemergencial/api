@@ -525,6 +525,121 @@
           "Service": {
             "type": "string"
           },
+          "person": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "Name": {
+                "type": "string"
+              },
+              "SocialName": {
+                "type": "string"
+              },
+              "MotherName": {
+                "type": "string"
+              },
+              "BirthDate": {
+                "type": "string"
+              },
+              "BirthPlace": {
+                "type": "string"
+              },
+              "gender": {
+                "type": "string"
+              },
+              "GeneralRegister": {
+                "type": "string"
+              },
+              "Childrens": {
+                "type": "integer"
+              },
+              "HasHabitation": {
+                "type": "boolean"
+              },
+              "HasEmergencyAid": {
+                "type": "boolean"
+              },
+              "HasPbhBasket": {
+                "type": "boolean"
+              },
+              "HasUniqueRegister": {
+                "type": "boolean"
+              },
+              "HasGeneralRegister": {
+                "type": "boolean"
+              },
+              "HasCpf": {
+                "type": "boolean"
+              },
+              "Cpf": {
+                "type": "string"
+              },
+              "HasCtps": {
+                "type": "boolean"
+              },
+              "HasBirthCertificate": {
+                "type": "boolean"
+              },
+              "marital_status": {
+                "type": "string"
+              },
+              "school_training": {
+                "type": "string"
+              },
+              "ReferenceLocation": {
+                "type": "string"
+              },
+              "Occupation": {
+                "type": "string"
+              },
+              "Profession": {
+                "type": "string"
+              },
+              "ContactPhone": {
+                "type": "string"
+              },
+              "ReferenceAddress": {
+                "type": "string"
+              },
+              "Demands": {
+                "type": "string"
+              },
+              "Observation": {
+                "type": "string"
+              },
+              "skin_color": {
+                "type": "string"
+              },
+              "CardNumber": {
+                "type": "string"
+              },
+              "Preferential": {
+                "type": "boolean"
+              },
+              "HomelessSince": {
+                "type": "string"
+              },
+              "services": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -534,6 +649,9 @@
       "NewService": {
         "properties": {
           "Service": {
+            "type": "string"
+          },
+          "person": {
             "type": "string"
           },
           "published_at": {

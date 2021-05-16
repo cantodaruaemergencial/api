@@ -540,6 +540,7 @@ type Person {
   Preferential: Boolean
   HomelessSince: Date
   published_at: DateTime
+  services(sort: String, limit: Int, start: Int, where: JSON): [Service]
 }
 
 type PersonConnection {
@@ -811,6 +812,7 @@ input PersonInput {
   CardNumber: String
   Preferential: Boolean
   HomelessSince: Date
+  services: [ID]
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -847,6 +849,7 @@ input editPersonInput {
   CardNumber: String
   Preferential: Boolean
   HomelessSince: Date
+  services: [ID]
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -1102,6 +1105,7 @@ type Service {
   created_at: DateTime!
   updated_at: DateTime!
   Service: String
+  person: Person
   published_at: DateTime
 }
 
@@ -1121,6 +1125,7 @@ type ServiceGroupBy {
   created_at: [ServiceConnectionCreated_at]
   updated_at: [ServiceConnectionUpdated_at]
   Service: [ServiceConnectionService]
+  person: [ServiceConnectionPerson]
   published_at: [ServiceConnectionPublished_at]
 }
 
@@ -1144,6 +1149,11 @@ type ServiceConnectionService {
   connection: ServiceConnection
 }
 
+type ServiceConnectionPerson {
+  key: ID
+  connection: ServiceConnection
+}
+
 type ServiceConnectionPublished_at {
   key: DateTime
   connection: ServiceConnection
@@ -1151,6 +1161,7 @@ type ServiceConnectionPublished_at {
 
 input ServiceInput {
   Service: String
+  person: ID
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -1158,6 +1169,7 @@ input ServiceInput {
 
 input editServiceInput {
   Service: String
+  person: ID
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -1727,7 +1739,7 @@ type deleteUserPayload {
   user: UsersPermissionsUser
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Benefit | BenefitConnection | BenefitAggregator | BenefitGroupBy | BenefitConnectionId | BenefitConnectionCreated_at | BenefitConnectionUpdated_at | BenefitConnectionBenefit | BenefitConnectionPublished_at | createBenefitPayload | updateBenefitPayload | deleteBenefitPayload | ExternalService | ExternalServiceConnection | ExternalServiceAggregator | ExternalServiceGroupBy | ExternalServiceConnectionId | ExternalServiceConnectionCreated_at | ExternalServiceConnectionUpdated_at | ExternalServiceConnectionExternalService | ExternalServiceConnectionPublished_at | createExternalServicePayload | updateExternalServicePayload | deleteExternalServicePayload | Gender | GenderConnection | GenderAggregator | GenderGroupBy | GenderConnectionId | GenderConnectionCreated_at | GenderConnectionUpdated_at | GenderConnectionGender | GenderConnectionPublished_at | createGenderPayload | updateGenderPayload | deleteGenderPayload | MaritalStatus | MaritalStatusConnection | MaritalStatusAggregator | MaritalStatusGroupBy | MaritalStatusConnectionId | MaritalStatusConnectionCreated_at | MaritalStatusConnectionUpdated_at | MaritalStatusConnectionMaritalStatus | MaritalStatusConnectionPublished_at | createMaritalStatusPayload | updateMaritalStatusPayload | deleteMaritalStatusPayload | PersonEntrance | PersonEntranceConnection | PersonEntranceAggregator | PersonEntranceGroupBy | PersonEntranceConnectionId | PersonEntranceConnectionCreated_at | PersonEntranceConnectionUpdated_at | PersonEntranceConnectionPerson | PersonEntranceConnectionDate | PersonEntranceConnectionPublished_at | createPersonEntrancePayload | updatePersonEntrancePayload | deletePersonEntrancePayload | Person | PersonConnection | PersonAggregator | PersonAggregatorSum | PersonAggregatorAvg | PersonAggregatorMin | PersonAggregatorMax | PersonGroupBy | PersonConnectionId | PersonConnectionCreated_at | PersonConnectionUpdated_at | PersonConnectionName | PersonConnectionSocialName | PersonConnectionMotherName | PersonConnectionBirthDate | PersonConnectionBirthPlace | PersonConnectionGender | PersonConnectionGeneralRegister | PersonConnectionChildrens | PersonConnectionHasHabitation | PersonConnectionHasEmergencyAid | PersonConnectionHasPbhBasket | PersonConnectionHasUniqueRegister | PersonConnectionHasGeneralRegister | PersonConnectionHasCpf | PersonConnectionCpf | PersonConnectionHasCtps | PersonConnectionHasBirthCertificate | PersonConnectionMarital_status | PersonConnectionSchool_training | PersonConnectionReferenceLocation | PersonConnectionOccupation | PersonConnectionProfession | PersonConnectionContactPhone | PersonConnectionReferenceAddress | PersonConnectionDemands | PersonConnectionObservation | PersonConnectionSkin_color | PersonConnectionCardNumber | PersonConnectionPreferential | PersonConnectionHomelessSince | PersonConnectionPublished_at | createPersonPayload | updatePersonPayload | deletePersonPayload | SchoolTraining | SchoolTrainingConnection | SchoolTrainingAggregator | SchoolTrainingGroupBy | SchoolTrainingConnectionId | SchoolTrainingConnectionCreated_at | SchoolTrainingConnectionUpdated_at | SchoolTrainingConnectionSchoolTraining | SchoolTrainingConnectionPublished_at | createSchoolTrainingPayload | updateSchoolTrainingPayload | deleteSchoolTrainingPayload | ServiceAttendance | ServiceAttendanceConnection | ServiceAttendanceAggregator | ServiceAttendanceAggregatorSum | ServiceAttendanceAggregatorAvg | ServiceAttendanceAggregatorMin | ServiceAttendanceAggregatorMax | ServiceAttendanceGroupBy | ServiceAttendanceConnectionId | ServiceAttendanceConnectionCreated_at | ServiceAttendanceConnectionUpdated_at | ServiceAttendanceConnectionService | ServiceAttendanceConnectionDate | ServiceAttendanceConnectionAttendances | ServiceAttendanceConnectionPublished_at | createServiceAttendancePayload | updateServiceAttendancePayload | deleteServiceAttendancePayload | Service | ServiceConnection | ServiceAggregator | ServiceGroupBy | ServiceConnectionId | ServiceConnectionCreated_at | ServiceConnectionUpdated_at | ServiceConnectionService | ServiceConnectionPublished_at | createServicePayload | updateServicePayload | deleteServicePayload | SkinColor | SkinColorConnection | SkinColorAggregator | SkinColorGroupBy | SkinColorConnectionId | SkinColorConnectionCreated_at | SkinColorConnectionUpdated_at | SkinColorConnectionSkinColor | SkinColorConnectionPublished_at | createSkinColorPayload | updateSkinColorPayload | deleteSkinColorPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Benefit | BenefitConnection | BenefitAggregator | BenefitGroupBy | BenefitConnectionId | BenefitConnectionCreated_at | BenefitConnectionUpdated_at | BenefitConnectionBenefit | BenefitConnectionPublished_at | createBenefitPayload | updateBenefitPayload | deleteBenefitPayload | ExternalService | ExternalServiceConnection | ExternalServiceAggregator | ExternalServiceGroupBy | ExternalServiceConnectionId | ExternalServiceConnectionCreated_at | ExternalServiceConnectionUpdated_at | ExternalServiceConnectionExternalService | ExternalServiceConnectionPublished_at | createExternalServicePayload | updateExternalServicePayload | deleteExternalServicePayload | Gender | GenderConnection | GenderAggregator | GenderGroupBy | GenderConnectionId | GenderConnectionCreated_at | GenderConnectionUpdated_at | GenderConnectionGender | GenderConnectionPublished_at | createGenderPayload | updateGenderPayload | deleteGenderPayload | MaritalStatus | MaritalStatusConnection | MaritalStatusAggregator | MaritalStatusGroupBy | MaritalStatusConnectionId | MaritalStatusConnectionCreated_at | MaritalStatusConnectionUpdated_at | MaritalStatusConnectionMaritalStatus | MaritalStatusConnectionPublished_at | createMaritalStatusPayload | updateMaritalStatusPayload | deleteMaritalStatusPayload | PersonEntrance | PersonEntranceConnection | PersonEntranceAggregator | PersonEntranceGroupBy | PersonEntranceConnectionId | PersonEntranceConnectionCreated_at | PersonEntranceConnectionUpdated_at | PersonEntranceConnectionPerson | PersonEntranceConnectionDate | PersonEntranceConnectionPublished_at | createPersonEntrancePayload | updatePersonEntrancePayload | deletePersonEntrancePayload | Person | PersonConnection | PersonAggregator | PersonAggregatorSum | PersonAggregatorAvg | PersonAggregatorMin | PersonAggregatorMax | PersonGroupBy | PersonConnectionId | PersonConnectionCreated_at | PersonConnectionUpdated_at | PersonConnectionName | PersonConnectionSocialName | PersonConnectionMotherName | PersonConnectionBirthDate | PersonConnectionBirthPlace | PersonConnectionGender | PersonConnectionGeneralRegister | PersonConnectionChildrens | PersonConnectionHasHabitation | PersonConnectionHasEmergencyAid | PersonConnectionHasPbhBasket | PersonConnectionHasUniqueRegister | PersonConnectionHasGeneralRegister | PersonConnectionHasCpf | PersonConnectionCpf | PersonConnectionHasCtps | PersonConnectionHasBirthCertificate | PersonConnectionMarital_status | PersonConnectionSchool_training | PersonConnectionReferenceLocation | PersonConnectionOccupation | PersonConnectionProfession | PersonConnectionContactPhone | PersonConnectionReferenceAddress | PersonConnectionDemands | PersonConnectionObservation | PersonConnectionSkin_color | PersonConnectionCardNumber | PersonConnectionPreferential | PersonConnectionHomelessSince | PersonConnectionPublished_at | createPersonPayload | updatePersonPayload | deletePersonPayload | SchoolTraining | SchoolTrainingConnection | SchoolTrainingAggregator | SchoolTrainingGroupBy | SchoolTrainingConnectionId | SchoolTrainingConnectionCreated_at | SchoolTrainingConnectionUpdated_at | SchoolTrainingConnectionSchoolTraining | SchoolTrainingConnectionPublished_at | createSchoolTrainingPayload | updateSchoolTrainingPayload | deleteSchoolTrainingPayload | ServiceAttendance | ServiceAttendanceConnection | ServiceAttendanceAggregator | ServiceAttendanceAggregatorSum | ServiceAttendanceAggregatorAvg | ServiceAttendanceAggregatorMin | ServiceAttendanceAggregatorMax | ServiceAttendanceGroupBy | ServiceAttendanceConnectionId | ServiceAttendanceConnectionCreated_at | ServiceAttendanceConnectionUpdated_at | ServiceAttendanceConnectionService | ServiceAttendanceConnectionDate | ServiceAttendanceConnectionAttendances | ServiceAttendanceConnectionPublished_at | createServiceAttendancePayload | updateServiceAttendancePayload | deleteServiceAttendancePayload | Service | ServiceConnection | ServiceAggregator | ServiceGroupBy | ServiceConnectionId | ServiceConnectionCreated_at | ServiceConnectionUpdated_at | ServiceConnectionService | ServiceConnectionPerson | ServiceConnectionPublished_at | createServicePayload | updateServicePayload | deleteServicePayload | SkinColor | SkinColorConnection | SkinColorAggregator | SkinColorGroupBy | SkinColorConnectionId | SkinColorConnectionCreated_at | SkinColorConnectionUpdated_at | SkinColorConnectionSkinColor | SkinColorConnectionPublished_at | createSkinColorPayload | updateSkinColorPayload | deleteSkinColorPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload
 
 input InputID {
   id: ID!
