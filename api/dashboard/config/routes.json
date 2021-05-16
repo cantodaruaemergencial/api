@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/dashboard/genders",
+      "handler": "Dashboard.genders",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
