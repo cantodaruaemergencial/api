@@ -69,7 +69,7 @@
       "model": "school-training"
     },
     "ReferenceLocation": {
-      "type": "string"
+      "type": "text"
     },
     "Occupation": {
       "type": "string"
@@ -81,7 +81,7 @@
       "type": "string"
     },
     "ReferenceAddress": {
-      "type": "string"
+      "type": "text"
     },
     "Observation": {
       "type": "string"
