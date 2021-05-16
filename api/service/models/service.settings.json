@@ -13,9 +13,9 @@
     "Service": {
       "type": "string"
     },
-    "person": {
+    "people": {
       "via": "services",
-      "model": "person"
+      "collection": "person"
     }
   }
 }

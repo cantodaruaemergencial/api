@@ -703,8 +703,11 @@
                 "Service": {
                   "type": "string"
                 },
-                "person": {
-                  "type": "string"
+                "people": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"

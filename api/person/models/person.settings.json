@@ -103,7 +103,8 @@
     },
     "services": {
       "collection": "service",
-      "via": "person"
+      "via": "people",
+      "dominant": true
     }
   }
 }
