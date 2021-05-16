@@ -628,6 +628,9 @@
                     "type": "string"
                   }
                 },
+                "HomelessTime": {
+                  "type": "string"
+                },
                 "published_at": {
                   "type": "string"
                 },

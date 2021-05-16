@@ -102,6 +102,9 @@
       "collection": "service",
       "via": "people",
       "dominant": true
+    },
+    "HomelessTime": {
+      "type": "string"
     }
   }
 }
