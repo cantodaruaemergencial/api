@@ -105,6 +105,12 @@
     },
     "HomelessTime": {
       "type": "string"
+    },
+    "BirthPlaceState": {
+      "type": "string"
+    },
+    "BirthPlaceCity": {
+      "type": "string"
     }
   }
 }

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/16/2021 4:09:38 PM"
+    "x-generation-date": "05/16/2021 4:37:15 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -7774,6 +7774,12 @@
               "HomelessTime": {
                 "type": "string"
               },
+              "BirthPlaceState": {
+                "type": "string"
+              },
+              "BirthPlaceCity": {
+                "type": "string"
+              },
               "published_at": {
                 "type": "string"
               },
@@ -8026,6 +8032,12 @@
           "HomelessTime": {
             "type": "string"
           },
+          "BirthPlaceState": {
+            "type": "string"
+          },
+          "BirthPlaceCity": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -8130,6 +8142,12 @@
             }
           },
           "HomelessTime": {
+            "type": "string"
+          },
+          "BirthPlaceState": {
+            "type": "string"
+          },
+          "BirthPlaceCity": {
             "type": "string"
           },
           "published_at": {
@@ -8372,6 +8390,12 @@
                   }
                 },
                 "HomelessTime": {
+                  "type": "string"
+                },
+                "BirthPlaceState": {
+                  "type": "string"
+                },
+                "BirthPlaceCity": {
                   "type": "string"
                 },
                 "published_at": {

@@ -721,6 +721,12 @@
           "HomelessTime": {
             "type": "string"
           },
+          "BirthPlaceState": {
+            "type": "string"
+          },
+          "BirthPlaceCity": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -825,6 +831,12 @@
             }
           },
           "HomelessTime": {
+            "type": "string"
+          },
+          "BirthPlaceState": {
+            "type": "string"
+          },
+          "BirthPlaceCity": {
             "type": "string"
           },
           "published_at": {
