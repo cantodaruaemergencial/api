@@ -410,7 +410,7 @@ type PersonEntrance {
   created_at: DateTime!
   updated_at: DateTime!
   person: Person
-  Date: Date!
+  Date: DateTime!
   published_at: DateTime
 }
 
@@ -455,7 +455,7 @@ type PersonEntranceConnectionPerson {
 }
 
 type PersonEntranceConnectionDate {
-  key: ID
+  key: DateTime
   connection: PersonEntranceConnection
 }
 
@@ -466,7 +466,7 @@ type PersonEntranceConnectionPublished_at {
 
 input PersonEntranceInput {
   person: ID
-  Date: Date!
+  Date: DateTime!
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -474,7 +474,7 @@ input PersonEntranceInput {
 
 input editPersonEntranceInput {
   person: ID
-  Date: Date
+  Date: DateTime
   published_at: DateTime
   created_by: ID
   updated_by: ID

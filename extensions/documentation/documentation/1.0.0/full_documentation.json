@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/16/2021 4:37:15 PM"
+    "x-generation-date": "05/17/2021 8:14:51 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2948,6 +2948,63 @@
             }
           }
         }
+      }
+    },
+    "/people2": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Person"
+        ],
+        "parameters": []
       }
     },
     "/people/count": {
@@ -7793,7 +7850,7 @@
           },
           "Date": {
             "type": "string",
-            "format": "date"
+            "format": "date-time"
           },
           "published_at": {
             "type": "string",
@@ -7811,7 +7868,7 @@
           },
           "Date": {
             "type": "string",
-            "format": "date"
+            "format": "date-time"
           },
           "published_at": {
             "type": "string",

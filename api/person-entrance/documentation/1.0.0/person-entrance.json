@@ -659,7 +659,7 @@
           },
           "Date": {
             "type": "string",
-            "format": "date"
+            "format": "date-time"
           },
           "published_at": {
             "type": "string",
@@ -677,7 +677,7 @@
           },
           "Date": {
             "type": "string",
-            "format": "date"
+            "format": "date-time"
           },
           "published_at": {
             "type": "string",

@@ -10,6 +10,14 @@
     },
     {
       "method": "GET",
+      "path": "/people2",
+      "handler": "person.find2",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/people/count",
       "handler": "person.count",
       "config": {
