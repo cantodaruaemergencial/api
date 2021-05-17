@@ -45,11 +45,12 @@ const allowGetRoutes = async (controller) => {
 };
 
 module.exports = async () => {
-  allowGetRoutes("service");
   allowGetRoutes("benefit");
   allowGetRoutes("external-service");
   allowGetRoutes("gender");
   allowGetRoutes("marital-status");
+  allowGetRoutes("service");
   allowGetRoutes("school-training");
+  allowGetRoutes("skin-color");
   return;
 };
