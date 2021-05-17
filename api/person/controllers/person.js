@@ -18,9 +18,9 @@ module.exports = {
     const result = await knex.raw(
       "select " +
         "p.Id, p.Name, p.SocialName, p.CardNumber, " +
-        "pe.Date as TodayEntranceTime, " +
+        "pe.DateTime as TodayEntranceTime, " +
         "(select count(1) from person_entrances pe1 where pe1.person = p.id) as Entrances " +
-        "from people p left join person_entrances pe on p.id = pe.person and date(pe.date) = date(now()) " +
+        "from people p left join person_entrances pe on p.id = pe.person and date(pe.DateTime) = date(now()) " +
         "where Name like :filter or SocialName like :filter or CardNumber like :filter " +
         "order by p.Name " +
         "limit :limit offset :offset;",

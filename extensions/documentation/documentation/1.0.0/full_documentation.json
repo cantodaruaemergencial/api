@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/17/2021 8:14:51 PM"
+    "x-generation-date": "05/17/2021 8:50:37 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -7721,7 +7721,7 @@
       "Person-entrance": {
         "required": [
           "id",
-          "Date"
+          "DateTime"
         ],
         "properties": {
           "id": {
@@ -7848,7 +7848,7 @@
               }
             }
           },
-          "Date": {
+          "DateTime": {
             "type": "string",
             "format": "date-time"
           },
@@ -7860,13 +7860,13 @@
       },
       "NewPerson-entrance": {
         "required": [
-          "Date"
+          "DateTime"
         ],
         "properties": {
           "person": {
             "type": "string"
           },
-          "Date": {
+          "DateTime": {
             "type": "string",
             "format": "date-time"
           },

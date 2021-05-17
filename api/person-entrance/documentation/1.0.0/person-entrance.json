@@ -530,7 +530,7 @@
       "Person-entrance": {
         "required": [
           "id",
-          "Date"
+          "DateTime"
         ],
         "properties": {
           "id": {
@@ -657,7 +657,7 @@
               }
             }
           },
-          "Date": {
+          "DateTime": {
             "type": "string",
             "format": "date-time"
           },
@@ -669,13 +669,13 @@
       },
       "NewPerson-entrance": {
         "required": [
-          "Date"
+          "DateTime"
         ],
         "properties": {
           "person": {
             "type": "string"
           },
-          "Date": {
+          "DateTime": {
             "type": "string",
             "format": "date-time"
           },
