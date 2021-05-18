@@ -9,10 +9,22 @@ module.exports = {
   async find2(ctx) {
     const knex = strapi.connections.default;
 
+    const q = ctx.query
+      ? ctx.query
+      : {
+          limit: 7,
+          offset: 0,
+          filter: "",
+        };
+
+    if (!q.limit) q.limit = 7;
+    if (!q.offset) q.offset = 0;
+    if (!q.filter) q.filter = "";
+
     const params = {
-      limit: Number(ctx.query.limit) ?? 7,
-      offset: Number(ctx.query.start) ?? 0,
-      filter: "%" + (ctx.query.filter ?? "") + "%",
+      limit: Number(q.limit),
+      offset: Number(q.start),
+      filter: "%" + q.filter + "%",
     };
 
     const result = await knex.raw(
