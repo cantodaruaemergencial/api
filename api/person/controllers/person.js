@@ -10,9 +10,9 @@ module.exports = {
     const knex = strapi.connections.default;
 
     const params = {
-      limit: Number(ctx.query?.limit) ?? 7,
-      offset: Number(ctx.query?.start) ?? 0,
-      filter: "%" + (ctx.query?.filter ?? "") + "%",
+      limit: Number(ctx.query.limit) ?? 7,
+      offset: Number(ctx.query.start) ?? 0,
+      filter: "%" + (ctx.query.filter ?? "") + "%",
     };
 
     const result = await knex.raw(
