@@ -7,6 +7,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "GET",
+      "path": "/dashboard/dates",
+      "handler": "Dashboard.dates",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

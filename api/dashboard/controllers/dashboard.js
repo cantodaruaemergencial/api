@@ -11,4 +11,13 @@ module.exports = {
 
     ctx.send(result[0]);
   },
+  dates: async (ctx) => {
+    const knex = strapi.connections.default;
+    const result = await knex.raw(
+      "select distinct date(datetime) as date, count(1) as total " +
+        "from person_entrances group by date(datetime) order by 1"
+    );
+
+    ctx.send(result[0]);
+  },
 };
