@@ -7,7 +7,7 @@ const query = async (query) => {
 
 const getQuery = async (ctx, q) => {
   const r = await query(q);
-  ctx.send(r[0]);
+  ctx.send(r[0][0]);
 };
 
 module.exports = {
