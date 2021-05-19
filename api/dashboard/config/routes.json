@@ -29,6 +29,11 @@
       "method": "GET",
       "path": "/dashboard/service-attendances",
       "handler": "Dashboard.serviceattendances"
+    },
+    {
+      "method": "GET",
+      "path": "/dashboard/ages",
+      "handler": "Dashboard.ages"
     }
   ]
 }
