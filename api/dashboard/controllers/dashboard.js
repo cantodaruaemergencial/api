@@ -100,4 +100,25 @@ module.exports = {
       totalByYears: result2[0],
     });
   },
+  homelessness: async (ctx) => {
+    const sql1 =
+      "select " +
+      "avg(datediff(now(), HomelessSince) div 30) as average " +
+      "from people " +
+      "where birthdate is not null";
+    const sql2 =
+      "select  " +
+      "datediff(now(), HomelessSince) div 30 as name, " +
+      "count(1) as total " +
+      "from people " +
+      "where HomelessSince is not null  " +
+      "group by datediff(now(), HomelessSince) div 30 " +      
+      "order by name ";
+    const result1 = await query(sql1);
+    const result2 = await query(sql2);
+    ctx.send({
+      average: result1[0][0].average,
+      totalByYears: result2[0],
+    });
+  },
 };
