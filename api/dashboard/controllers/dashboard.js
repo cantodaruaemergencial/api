@@ -1,9 +1,13 @@
 const _ = require("lodash");
 
-const getQuery = async (ctx, query) => {
+const query = async (query) => {
   const knex = strapi.connections.default;
-  const result = await knex.raw(query);
-  ctx.send(result[0]);
+  return await knex.raw(query);
+};
+
+const getQuery = async (ctx, q) => {
+  const r = await query(q);
+  ctx.send(r[0]);
 };
 
 module.exports = {
@@ -30,4 +34,24 @@ module.exports = {
         "from people p left join school_trainings st on p.school_training = st.id " +
         "group by st.SchoolTraining"
     ),
+  entrances: async (ctx) => {
+    const sql1 =
+      "select " +
+      "(select count(1) from person_entrances) as total, " +
+      "(select count(1) from person_entrances  " +
+      "where year(datetime) = year(now())  " +
+      "and month(datetime) = month(now())) as monthTotal, " +
+      "(select count(1) from person_entrances  " +
+      "where year(datetime) = year(now())  " +
+      "and week(datetime) = week(now())) as weekTotal";
+    const sql2 =
+      "select date_format(datetime, '%Y-%m') as name, count(1) as total " +
+      "from person_entrances group by name order by name;";
+    const result1 = await query(sql1);
+    const result2 = await query(sql2);
+    ctx.send({
+      totals: result1[0],
+      totalByMonth: result2[0],
+    });
+  },
 };

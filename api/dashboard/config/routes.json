@@ -19,6 +19,11 @@
       "method": "GET",
       "path": "/dashboard/schooltrainings",
       "handler": "Dashboard.schooltrainings"
+    },
+    {
+      "method": "GET",
+      "path": "/dashboard/entrances",
+      "handler": "Dashboard.entrances"
     }
   ]
 }
