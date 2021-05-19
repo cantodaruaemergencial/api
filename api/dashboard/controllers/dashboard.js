@@ -1,3 +1,11 @@
+Array.prototype.sum = function (prop) {
+  var total = 0;
+  for (var i = 0, _len = this.length; i < _len; i++) {
+    total += 1 * this[i][prop];
+  }
+  return total;
+};
+
 const _ = require("lodash");
 
 const query = async (query) => {
@@ -116,9 +124,41 @@ module.exports = {
       "order by name ";
     const result1 = await query(sql1);
     const result2 = await query(sql2);
+
+    const result3 = [
+      {
+        name: "Até 3 meses",
+        total: result2[0].filter((r) => r.name <= 3).sum("total"),
+      },
+      {
+        name: "Até 6 meses",
+        total: result2[0].filter((r) => r.name > 3 && r.name <= 6).sum("total"),
+      },
+      {
+        name: "Até 1 ano",
+        total: result2[0].filter((r) => r.name > 6 && r.name <= 12).sum("total"),
+      },
+      {
+        name: "Até 2 anos",
+        total: result2[0].filter((r) => r.name > 12 && r.name <= 24).sum("total"),
+      },
+      {
+        name: "Até 5 anos",
+        total: result2[0].filter((r) => r.name > 24 && r.name <= 60).sum("total"),
+      },
+      {
+        name: "Até 10 anos",
+        total: result2[0].filter((r) => r.name > 60 && r.name <= 120).sum("total"),
+      },
+      {
+        name: "Mais de 10 anos",
+        total: result2[0].filter((r) => r.name > 120).sum("total"),
+      },
+    ];
+
     ctx.send({
       average: result1[0][0].average,
-      totalByCategory: result2[0],
+      totalByCategory: result3,
     });
   },
   services: async (ctx) =>
