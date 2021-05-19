@@ -1,23 +1,33 @@
 const _ = require("lodash");
 
+const getQuery = async (ctx, query) => {
+  const knex = strapi.connections.default;
+  const result = await knex.raw(query);
+  ctx.send(result[0]);
+};
+
 module.exports = {
-  genders: async (ctx) => {
-    const knex = strapi.connections.default;
-    const result = await knex.raw(
-      "select g.gender as gender, count(1) as total " +
+  people: async (ctx) =>
+    getQuery(ctx, "select count(1) as total from people limit 1"),
+  genders: async (ctx) =>
+    getQuery(
+      ctx,
+      "select ifnull(g.gender, 'Outros') as name, count(1) as total " +
         "from people p left join genders g on p.gender = g.id " +
-        "group by gender"
-    );
-
-    ctx.send(result[0]);
-  },
-  dates: async (ctx) => {
-    const knex = strapi.connections.default;
-    const result = await knex.raw(
-      "select distinct date(datetime) as date, count(1) as total " +
-        "from person_entrances group by date(datetime) order by 1"
-    );
-
-    ctx.send(result[0]);
-  },
+        "group by g.gender"
+    ),
+  skincolors: async (ctx) =>
+    getQuery(
+      ctx,
+      "select ifnull(sc.SkinColor, 'Outros') as name, count(1) as total " +
+        "from people p left join skin_colors sc on p.skin_color = sc.id " +
+        "group by sc.SkinColor"
+    ),
+  schooltrainings: async (ctx) =>
+    getQuery(
+      ctx,
+      "select ifnull(st.SchoolTraining, 'Outros') as name, count(1) as total " +
+        "from people p left join school_trainings st on p.school_training = st.id " +
+        "group by st.SchoolTraining"
+    ),
 };

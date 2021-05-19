@@ -2,19 +2,23 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/dashboard/genders",
-      "handler": "Dashboard.genders",
-      "config": {
-        "policies": []
-      }
+      "path": "/dashboard/people",
+      "handler": "dashboard.people"
     },
     {
       "method": "GET",
-      "path": "/dashboard/dates",
-      "handler": "Dashboard.dates",
-      "config": {
-        "policies": []
-      }
+      "path": "/dashboard/genders",
+      "handler": "Dashboard.genders"
+    },
+    {
+      "method": "GET",
+      "path": "/dashboard/skincolors",
+      "handler": "Dashboard.skincolors"
+    },
+    {
+      "method": "GET",
+      "path": "/dashboard/schooltrainings",
+      "handler": "Dashboard.schooltrainings"
     }
   ]
 }
