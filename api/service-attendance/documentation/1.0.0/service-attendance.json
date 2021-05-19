@@ -554,6 +554,9 @@
                   "type": "string"
                 }
               },
+              "icon": {
+                "type": "string"
+              },
               "published_at": {
                 "type": "string"
               },

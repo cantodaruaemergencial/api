@@ -124,12 +124,12 @@ module.exports = {
   services: async (ctx) =>
     getQuery(
       ctx,
-      "select s.service as name, " +
+      "select s.service as name, s.icon, " +
         "(select sum(sa.Attendances) from service_attendances sa where sa.service = s.id) as total, " +
         "(select ifnull(sum(Attendances),0) from service_attendances " +
         "where service = s.id and year(date) = year(now()) and month(date) = month(now())) as monthTotal, " +
         "(select ifnull(sum(Attendances),0) from service_attendances " +
         "where service = s.id and year(date) = year(now()) and week(date) = week(now())) as weekTotal " +
-        "from services s; "
+        "from services s where s.published_at is not null; "
     ),
 };
