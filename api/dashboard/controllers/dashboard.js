@@ -112,7 +112,7 @@ module.exports = {
       "count(1) as total " +
       "from people " +
       "where HomelessSince is not null  " +
-      "group by datediff(now(), HomelessSince) div 30 " +      
+      "group by datediff(now(), HomelessSince) div 30 " +
       "order by name ";
     const result1 = await query(sql1);
     const result2 = await query(sql2);
@@ -121,4 +121,15 @@ module.exports = {
       totalByYears: result2[0],
     });
   },
+  services: async (ctx) =>
+    getQuery(
+      ctx,
+      "select s.service as name, " +
+        "(select sum(sa.Attendances) from service_attendances sa where sa.service = s.id) as total, " +
+        "(select ifnull(sum(Attendances),0) from service_attendances " +
+        "where service = s.id and year(date) = year(now()) and month(date) = month(now())) as monthTotal, " +
+        "(select ifnull(sum(Attendances),0) from service_attendances " +
+        "where service = s.id and year(date) = year(now()) and week(date) = week(now())) as weekTotal " +
+        "from services s; "
+    ),
 };
