@@ -56,4 +56,26 @@ module.exports = {
       totalByMonth: result2[0],
     });
   },
+  serviceattendances: async (ctx) => {
+    const sql1 =
+      "select " +
+      "(select sum(Attendances) from service_attendances) as total, " +
+      "(select ifnull(sum(Attendances),0) from service_attendances  " +
+      "where year(date) = year(now())  " +
+      "and month(date) = month(now())) as monthTotal, " +
+      "(select ifnull(sum(Attendances),0) from service_attendances " +
+      "where year(date) = year(now())  " +
+      "and week(date) = week(now())) as weekTotal";
+    const sql2 =
+      "select date_format(date, '%Y-%m') as month, sum(Attendances) as total " +
+      "from service_attendances group by month order by month;";
+    const result1 = await query(sql1);
+    const result2 = await query(sql2);
+    ctx.send({
+      total: result1[0][0].total,
+      monthTotal: result1[0][0].monthTotal,
+      weekTotal: result1[0][0].weekTotal,
+      totalByMonth: result2[0],
+    });
+  },
 };
