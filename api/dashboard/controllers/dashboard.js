@@ -5,14 +5,14 @@ const query = async (query) => {
   return await knex.raw(query);
 };
 
-const getQuery = async (ctx, q) => {
+const getQuery = async (ctx, q, isArray = true) => {
   const r = await query(q);
-  ctx.send(r[0][0]);
+  ctx.send(isArray ? r[0] : r[0][0]);
 };
 
 module.exports = {
   people: async (ctx) =>
-    getQuery(ctx, "select count(1) as total from people limit 1"),
+    getQuery(ctx, "select count(1) as total from people limit 1", false),
   genders: async (ctx) =>
     getQuery(
       ctx,
@@ -45,12 +45,14 @@ module.exports = {
       "where year(datetime) = year(now())  " +
       "and week(datetime) = week(now())) as weekTotal";
     const sql2 =
-      "select date_format(datetime, '%Y-%m') as name, count(1) as total " +
-      "from person_entrances group by name order by name;";
+      "select date_format(datetime, '%Y-%m') as month, count(1) as total " +
+      "from person_entrances group by month order by month;";
     const result1 = await query(sql1);
     const result2 = await query(sql2);
     ctx.send({
-      totals: result1[0],
+      total: result1[0][0].total,
+      monthTotal: result1[0][0].monthTotal,
+      weekTotal: result1[0][0].weekTotal,
       totalByMonth: result2[0],
     });
   },
