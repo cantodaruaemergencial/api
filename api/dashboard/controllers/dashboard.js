@@ -53,7 +53,7 @@ module.exports = {
       total: result1[0][0].total,
       monthTotal: result1[0][0].monthTotal,
       weekTotal: result1[0][0].weekTotal,
-      totalByMonth: result2[0],
+      totalByCategory: result2[0],
     });
   },
   serviceattendances: async (ctx) => {
@@ -75,7 +75,7 @@ module.exports = {
       total: result1[0][0].total,
       monthTotal: result1[0][0].monthTotal,
       weekTotal: result1[0][0].weekTotal,
-      totalByMonth: result2[0],
+      totalByCategory: result2[0],
     });
   },
   ages: async (ctx) => {
@@ -97,7 +97,7 @@ module.exports = {
     const result2 = await query(sql2);
     ctx.send({
       average: result1[0][0].average,
-      totalByYears: result2[0],
+      totalByCategory: result2[0],
     });
   },
   homelessness: async (ctx) => {
@@ -118,7 +118,7 @@ module.exports = {
     const result2 = await query(sql2);
     ctx.send({
       average: result1[0][0].average,
-      totalByYears: result2[0],
+      totalByCategory: result2[0],
     });
   },
   services: async (ctx) =>
