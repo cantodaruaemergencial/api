@@ -170,6 +170,7 @@ module.exports = {
         "where service = s.id and year(date) = year(now()) and month(date) = month(now())) as monthTotal, " +
         "(select ifnull(sum(Attendances),0) from service_attendances " +
         "where service = s.id and year(date) = year(now()) and week(date) = week(now())) as weekTotal " +
-        "from services s where s.published_at is not null; "
+        "from services s where s.published_at is not null " +
+        "order by name;"
     ),
 };
