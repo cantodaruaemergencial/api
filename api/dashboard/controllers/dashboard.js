@@ -173,4 +173,7 @@ module.exports = {
         "from services s where s.published_at is not null " +
         "order by name;"
     ),
+  today: async (ctx) =>
+  getQuery(ctx,
+    "select count(1) as todayEntrances from person_entrances p where date(p.datetime) = date(now())")
 };
