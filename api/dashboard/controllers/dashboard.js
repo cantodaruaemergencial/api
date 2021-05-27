@@ -136,19 +136,27 @@ module.exports = {
       },
       {
         name: "Até 1 ano",
-        total: result2[0].filter((r) => r.name > 6 && r.name <= 12).sum("total"),
+        total: result2[0]
+          .filter((r) => r.name > 6 && r.name <= 12)
+          .sum("total"),
       },
       {
         name: "Até 2 anos",
-        total: result2[0].filter((r) => r.name > 12 && r.name <= 24).sum("total"),
+        total: result2[0]
+          .filter((r) => r.name > 12 && r.name <= 24)
+          .sum("total"),
       },
       {
         name: "Até 5 anos",
-        total: result2[0].filter((r) => r.name > 24 && r.name <= 60).sum("total"),
+        total: result2[0]
+          .filter((r) => r.name > 24 && r.name <= 60)
+          .sum("total"),
       },
       {
         name: "Até 10 anos",
-        total: result2[0].filter((r) => r.name > 60 && r.name <= 120).sum("total"),
+        total: result2[0]
+          .filter((r) => r.name > 60 && r.name <= 120)
+          .sum("total"),
       },
       {
         name: "Mais de 10 anos",
@@ -174,6 +182,8 @@ module.exports = {
         "order by name;"
     ),
   today: async (ctx) =>
-  getQuery(ctx,
-    "select count(1) as todayEntrances from person_entrances p where date(p.datetime) = date(now())")
+    getQuery(
+      ctx,
+      "select count(1) as entrances from person_entrances p where date(p.datetime) = date(now())"
+    ),
 };

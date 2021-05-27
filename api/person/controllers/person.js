@@ -12,8 +12,8 @@ module.exports = {
     const params = {
       limit: Number(ctx.query.limit),
       offset: Number(ctx.query.start),
-      filter: ctx.query.filter ? "%" + ctx.query.filter + "%" : '%',
-      numericFilter: ctx.query.filter ? ctx.query.filter + "%" : '%'
+      filter: ctx.query.filter ? "%" + ctx.query.filter + "%" : "%",
+      numericFilter: ctx.query.filter ? ctx.query.filter : "0",
     };
 
     const result = await knex.raw(
