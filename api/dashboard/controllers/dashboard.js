@@ -184,6 +184,7 @@ module.exports = {
   today: async (ctx) =>
     getQuery(
       ctx,
-      "select count(1) as entrances from person_entrances p where date(p.datetime) = date(now())"
+      "select count(1) as entrances from person_entrances p where date(p.datetime) = date(now())",
+      false
     ),
 };
